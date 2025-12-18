@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 25% 10%;
+    --foreground: 180 100% 98%;
+
+    --card: 220 20% 15%;
+    --card-foreground: 180 100% 98%;
+
+    --popover: 220 20% 15%;
+    --popover-foreground: 180 100% 98%;
+
+    --primary: 180 85% 55%;
+    --primary-foreground: 220 25% 10%;
+
+    --secondary: 200 80% 50%;
+    --secondary-foreground: 220 25% 10%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 180 20% 70%;
+
+    --accent: 165 90% 60%;
+    --accent-foreground: 220 25% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 25%;
+    --input: 220 20% 25%;
+    --ring: 180 85% 55%;
+
+    --radius: 1rem;
+
+    --glass-bg: 220 20% 15% / 0.6;
+    --glass-border: 180 85% 55% / 0.2;
+    
+    --gradient-start: 220 25% 10%;
+    --gradient-mid: 200 40% 20%;
+    --gradient-end: 180 50% 25%;
+
+    --glow-primary: 180 85% 55% / 0.5;
+    --glow-accent: 165 90% 60% / 0.4;
+
+    --sidebar-background: 220 22% 12%;
+    --sidebar-foreground: 180 100% 98%;
+    --sidebar-primary: 180 85% 55%;
+    --sidebar-primary-foreground: 220 25% 10%;
+    --sidebar-accent: 220 20% 18%;
+    --sidebar-accent-foreground: 180 100% 98%;
+    --sidebar-border: 220 20% 25%;
+    --sidebar-ring: 180 85% 55%;
+  }
+
+  .dark {
+    --background: 220 25% 10%;
+    --foreground: 180 100% 98%;
+
+    --card: 220 20% 15%;
+    --card-foreground: 180 100% 98%;
+
+    --popover: 220 20% 15%;
+    --popover-foreground: 180 100% 98%;
+
+    --primary: 180 85% 55%;
+    --primary-foreground: 220 25% 10%;
+
+    --secondary: 200 80% 50%;
+    --secondary-foreground: 220 25% 10%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 180 20% 70%;
+
+    --accent: 165 90% 60%;
+    --accent-foreground: 220 25% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 25%;
+    --input: 220 20% 25%;
+    --ring: 180 85% 55%;
+    
+    --sidebar-background: 220 22% 12%;
+    --sidebar-foreground: 180 100% 98%;
+    --sidebar-primary: 180 85% 55%;
+    --sidebar-primary-foreground: 220 25% 10%;
+    --sidebar-accent: 220 20% 18%;
+    --sidebar-accent-foreground: 180 100% 98%;
+    --sidebar-border: 220 20% 25%;
+    --sidebar-ring: 180 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-mid)), hsl(var(--gradient-end)));
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-card/60 backdrop-blur-xl border border-white/10 shadow-2xl;
+  }
+  
+  .glass-strong {
+    @apply bg-card/80 backdrop-blur-2xl border border-primary/20 shadow-2xl;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+  }
+  
+  .glow-primary {
+    box-shadow: 0 0 40px hsl(var(--glow-primary)), 0 0 80px hsl(var(--glow-primary));
+  }
+  
+  .glow-hover {
+    transition: all 0.3s ease;
+  }
+  
+  .glow-hover:hover {
+    box-shadow: 0 0 30px hsl(var(--glow-accent)), 0 0 60px hsl(var(--glow-accent));
+    transform: translateY(-2px);
+  }
+  
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+}

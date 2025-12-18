@@ -1,0 +1,16 @@
+project_id = "pxtfsfjbpamzqdednbbu"
+
+[functions.pdf-upload]
+verify_jwt = false
+
+[functions.pdf-qa]
+verify_jwt = false
+
+[functions.chat]
+verify_jwt = false
+
+[functions.generate-notes]
+verify_jwt = false
+
+[functions.generate-mcq]
+verify_jwt = false
